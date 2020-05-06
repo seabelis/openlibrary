@@ -164,6 +164,13 @@ $var title: $page.title
                         <li><a href="$link.url">$link.title</a></li>
                     </ul>
                 </div>
+            
+            $if page.contains:
+                <div class="section">$_("Contains")</div>
+                <ul>
+                    $for contains in page.contains:
+                        <li>$contains</li>
+                </ul>
 
             $if page.edition_count > 1:
                 $if (page.lc_classifications or page.dewey_number):
